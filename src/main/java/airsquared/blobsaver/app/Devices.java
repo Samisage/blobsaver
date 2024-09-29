@@ -123,7 +123,7 @@ public final class Devices {
             return "iPad";
         } else if (identifier.startsWith("AppleTV")) {
             return "AppleTV";
-        } else if (identifier.startsWith("HomePod")) {
+        } else if (identifier.startsWith("AudioAccessory")) {
             return "HomePod";
         } else if (identifier.startsWith("iBridge")) {
             return "T2 Mac";

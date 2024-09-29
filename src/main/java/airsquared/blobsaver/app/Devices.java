@@ -43,7 +43,9 @@ public final class Devices {
     private static final ObservableList<String> AppleTVList = unmodifiableArrayList("Apple TV 2G", "Apple TV 3",
             "Apple TV 3 (2013)", "Apple TV 4 (2015)", "Apple TV 4K", "Apple TV 4K (2021) (AppleTV11,1)", "Apple TV 4K (2022) (AppleTV14,1)");
 
-    private static final ObservableList<String> deviceTypes = unmodifiableArrayList("iPhone", "iPod", "iPad", "AppleTV", "T2 Mac");
+    private static final ObservableList<String> AudioAccessoryList = unmodifiableArrayList("AudioAccessory1,1");
+
+    private static final ObservableList<String> deviceTypes = unmodifiableArrayList("iPhone", "iPod", "iPad", "AppleTV", "AudioAccessory", "T2 Mac");
 
     private static final Map<String, String> boardConfigs = (Map) new Properties();
 
@@ -121,6 +123,8 @@ public final class Devices {
             return "iPad";
         } else if (identifier.startsWith("AppleTV")) {
             return "AppleTV";
+        } else if (identifier.startsWith("AudioAccessory")) {
+            return "AudioAccessory";
         } else if (identifier.startsWith("iBridge")) {
             return "T2 Mac";
         }
@@ -133,6 +137,7 @@ public final class Devices {
             case "iPod" -> iPodList;
             case "iPad" -> iPadList;
             case "AppleTV" -> AppleTVList;
+            case "AudioAccessory" -> AudioAccessoryList;
             case "T2 Mac" -> iBridgeList;
             default -> FXCollections.emptyObservableList();
         };
@@ -143,6 +148,7 @@ public final class Devices {
             case "iPhone", "iPod" -> "iOS";
             case "iPad" -> "iOS/iPadOS";
             case "AppleTV" -> "tvOS";
+            case "AudioAccessory" -> "audioOS";
             case "T2 Mac" -> "bridgeOS";
             default -> null;
         };

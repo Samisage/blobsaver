@@ -27,5 +27,5 @@
 
 .tooltip {
   -fx-show-delay: 100ms;
-  -fx-show-duration: 20s;
+  -fx-show-duration: 40s;
 }
